@@ -539,6 +539,9 @@ export default function Index() {
             <div className="flex justify-center mb-4">{ornamentSvg}</div>
             <p className="font-display text-2xl text-white/40 font-light italic">11 · 07 · 2026</p>
             <p className="font-body text-xs text-white/20 mt-2 tracking-widest uppercase">Любовь &amp; Владислав</p>
+            <a href="/admin" className="block mt-8 font-body text-xs text-white/10 hover:text-white/30 transition-colors">
+              ●
+            </a>
           </div>
         </div>
       </section>
