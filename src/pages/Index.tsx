@@ -69,6 +69,11 @@ function RSVPSection() {
   const [attending, setAttending] = useState<"yes" | "no" | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [diet, setDiet] = useState("");
+  const [drinks, setDrinks] = useState<string[]>([]);
+  const [transfer, setTransfer] = useState<"yes" | "no" | null>(null);
+
+  const toggleDrink = (d: string) =>
+    setDrinks(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -176,14 +181,72 @@ function RSVPSection() {
                 </div>
 
                 <div>
-                  <label className="font-body text-xs tracking-widest uppercase text-[#C9A84C]/70 block mb-2">Пожелания к меню</label>
+                  <label className="font-body text-xs tracking-widest uppercase text-[#C9A84C]/70 block mb-3">Предпочтения в еде</label>
+                  <div className="grid grid-cols-2 gap-2 mb-3">
+                    {["Мясо", "Рыба", "Вегетарианское", "Без глютена", "Без лактозы", "Детское меню"].map(opt => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setDiet(d => d === opt ? "" : opt)}
+                        className={`py-2.5 px-3 rounded-lg border font-body text-sm transition-all duration-200 text-left ${
+                          diet === opt
+                            ? "border-[#C9A84C] bg-[#C9A84C]/10 text-[#C9A84C]"
+                            : "border-white/10 bg-[#141210] text-white/50 hover:border-white/30 hover:text-white/80"
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
                   <textarea
-                    value={diet}
-                    onChange={e => setDiet(e.target.value)}
-                    placeholder="Вегетарианское, аллергии, предпочтения..."
-                    rows={3}
-                    className="w-full bg-[#141210] border border-[#C9A84C]/20 rounded-lg px-4 py-3 font-body text-white placeholder:text-white/20 focus:outline-none focus:border-[#C9A84C]/60 transition-colors resize-none"
+                    placeholder="Аллергии или особые пожелания..."
+                    rows={2}
+                    className="w-full bg-[#141210] border border-[#C9A84C]/20 rounded-lg px-4 py-3 font-body text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-[#C9A84C]/60 transition-colors resize-none"
                   />
+                </div>
+
+                <div>
+                  <label className="font-body text-xs tracking-widest uppercase text-[#C9A84C]/70 block mb-3">Предпочтения в напитках</label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {["Шампанское", "Вино красное", "Вино белое", "Виски / коньяк", "Пиво", "Без алкоголя"].map(opt => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => toggleDrink(opt)}
+                        className={`py-2.5 px-3 rounded-lg border font-body text-sm transition-all duration-200 text-left ${
+                          drinks.includes(opt)
+                            ? "border-[#C9A84C] bg-[#C9A84C]/10 text-[#C9A84C]"
+                            : "border-white/10 bg-[#141210] text-white/50 hover:border-white/30 hover:text-white/80"
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="font-body text-xs tracking-widest uppercase text-[#C9A84C]/70 block mb-3">Нужен ли трансфер?</label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { val: "yes" as const, label: "Да, нужен", icon: "Car" },
+                      { val: "no" as const, label: "Нет, доберусь сам", icon: "MapPin" },
+                    ].map(opt => (
+                      <button
+                        key={opt.val}
+                        type="button"
+                        onClick={() => setTransfer(opt.val)}
+                        className={`flex items-center justify-center gap-2 py-3 px-4 rounded-lg border font-body text-sm transition-all duration-200 ${
+                          transfer === opt.val
+                            ? "border-[#C9A84C] bg-[#C9A84C]/10 text-[#C9A84C]"
+                            : "border-white/10 bg-[#141210] text-white/50 hover:border-white/30 hover:text-white/80"
+                        }`}
+                      >
+                        <Icon name={opt.icon} size={16} />
+                        {opt.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
