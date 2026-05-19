@@ -349,7 +349,7 @@ export default function Index() {
               </div>
               <div className="hidden md:block w-px bg-[#C9A84C]/20 self-stretch" />
               <div className="md:w-48 text-center md:text-right">
-                <p className="font-display text-5xl font-light" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C97A 50%, #C9A84C 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>2023</p>
+                <p className="font-display text-5xl font-light" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C97A 50%, #C9A84C 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>2024</p>
                 <p className="font-body text-xs text-white/30 mt-1 tracking-widest uppercase">Год знакомства</p>
               </div>
             </div>
@@ -441,8 +441,8 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             {[
-              { icon: "Phone", label: "Владислав", value: "+7 (999) 111-22-33", href: "tel:+79991112233" },
-              { icon: "Phone", label: "Любовь", value: "+7 (999) 444-55-66", href: "tel:+79994445566" },
+              { icon: "Phone", label: "Владислав", value: "+7 (996) 411-36-51", href: "tel:+79964113651" },
+              { icon: "Phone", label: "Любовь", value: "+7 (995) 443-15-06", href: "tel:+79954431506" },
               { icon: "MessageCircle", label: "Telegram", value: "@wedding_2026", href: "https://t.me/wedding_2026" },
               { icon: "Mail", label: "Email", value: "wedding@email.ru", href: "mailto:wedding@email.ru" },
             ].map((item, i) => (
