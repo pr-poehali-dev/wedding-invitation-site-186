@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
-const WEDDING_DATE = new Date("2026-06-14T14:00:00");
+const WEDDING_DATE = new Date("2026-07-11T13:40:00");
 
 function useCountdown(targetDate: Date) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -257,19 +257,19 @@ export default function Index() {
 
           <div className="animate-fadeInUp delay-200">
             <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-light leading-none text-white mb-2">
-              Александр
+              Любовь
             </h1>
             <div className="flex items-center justify-center gap-4 my-3 md:my-4">
               {ornamentSvg}
             </div>
             <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-light leading-none italic" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C97A 50%, #C9A84C 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              &amp; Екатерина
+              &amp; Владислав
             </h1>
           </div>
 
           <div className="animate-fadeInUp delay-500 mt-8 md:mt-12">
             <p className="font-body text-base md:text-lg text-white/60 tracking-widest uppercase">
-              14 июня 2026 · Москва
+              11 июля 2026 · Кемерово
             </p>
           </div>
 
@@ -318,9 +318,9 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: "Gem", title: "Церемония", time: "14:00", desc: "Торжественная регистрация брака в окружении близких и родных" },
-              { icon: "UtensilsCrossed", title: "Банкет", time: "16:00", desc: "Праздничный ужин с живой музыкой, тостами и незабываемой атмосферой" },
-              { icon: "Music2", title: "Вечеринка", time: "20:00", desc: "Танцы, конкурсы и веселье до самого утра" },
+              { icon: "Gem", title: "Регистрация", time: "13:40", desc: "Торжественная регистрация брака в Органе ЗАГС № 3 г. Кемерово" },
+              { icon: "Camera", title: "Фотосессия", time: "15:00", desc: "Памятные снимки в окружении природы и городских красот Кемерово" },
+              { icon: "UtensilsCrossed", title: "Банкет", time: "17:00", desc: "Праздничный ужин в ресторане Oronero — музыка, тосты и веселье" },
             ].map((item, i) => (
               <div
                 key={i}
@@ -369,9 +369,9 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[#141210] border border-[#C9A84C]/10 rounded-2xl p-8 space-y-6">
               {[
-                { icon: "MapPin", label: "Адрес", value: "Ресторан «Золотое кольцо»\nул. Тверская, 15, Москва" },
-                { icon: "Calendar", label: "Дата", value: "14 июня 2026 года\nВоскресенье" },
-                { icon: "Clock", label: "Время", value: "Церемония в 14:00\nБанкет с 16:00" },
+                { icon: "MapPin", label: "Банкет", value: "Ресторан «Oronero»\nг. Кемерово" },
+                { icon: "Calendar", label: "Дата", value: "11 июля 2026 года\nСуббота" },
+                { icon: "Clock", label: "Программа", value: "13:40 — Регистрация в ЗАГС № 3\n15:00 — Фотосессия\n17:00 — Банкет в Oronero" },
                 { icon: "Car", label: "Парковка", value: "Бесплатная парковка\nдля гостей на месте" },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
@@ -388,7 +388,7 @@ export default function Index() {
 
             <div className="bg-[#141210] border border-[#C9A84C]/10 rounded-2xl overflow-hidden relative min-h-64">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=37.6036,55.7638&z=14&pt=37.6036,55.7638,pm2rdm"
+                src="https://yandex.ru/map-widget/v1/?ll=86.0917,55.3559&z=14&pt=86.0917,55.3559,pm2rdm"
                 width="100%"
                 height="100%"
                 className="absolute inset-0 w-full h-full opacity-80"
@@ -397,7 +397,7 @@ export default function Index() {
               />
               <div className="absolute inset-0 border border-[#C9A84C]/10 rounded-2xl pointer-events-none" />
               <a
-                href="https://yandex.ru/maps/?text=Тверская+15+Москва"
+                href="https://yandex.ru/maps/?text=Oronero+Кемерово"
                 target="_blank"
                 rel="noreferrer"
                 className="absolute bottom-4 right-4 flex items-center gap-2 bg-[#C9A84C] text-[#0D0B08] px-4 py-2 rounded-lg font-body text-xs font-semibold tracking-widest uppercase hover:bg-[#E8C97A] transition-colors"
@@ -410,10 +410,10 @@ export default function Index() {
 
           <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { icon: "Train", label: "Метро", value: "Пушкинская, 5 мин" },
-              { icon: "Bus", label: "Автобус", value: "Остановка рядом" },
-              { icon: "Car", label: "На авто", value: "Навигатор: Тверская 15" },
-              { icon: "Phone", label: "Вопросы", value: "+7 (999) 123-45-67" },
+              { icon: "Building2", label: "ЗАГС", value: "ЗАГС № 3, Кемерово" },
+              { icon: "Utensils", label: "Ресторан", value: "Oronero, Кемерово" },
+              { icon: "Car", label: "На авто", value: "Навигатор: Oronero Кемерово" },
+              { icon: "Phone", label: "Вопросы", value: "+7 (999) 111-22-33" },
             ].map((item, i) => (
               <div key={i} className="bg-[#141210] border border-[#C9A84C]/10 rounded-xl p-4 text-center hover:border-[#C9A84C]/30 transition-colors">
                 <Icon name={item.icon} size={18} className="text-[#C9A84C] mx-auto mb-2" fallback="Info" />
@@ -441,8 +441,8 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             {[
-              { icon: "Phone", label: "Александр", value: "+7 (999) 111-22-33", href: "tel:+79991112233" },
-              { icon: "Phone", label: "Екатерина", value: "+7 (999) 444-55-66", href: "tel:+79994445566" },
+              { icon: "Phone", label: "Владислав", value: "+7 (999) 111-22-33", href: "tel:+79991112233" },
+              { icon: "Phone", label: "Любовь", value: "+7 (999) 444-55-66", href: "tel:+79994445566" },
               { icon: "MessageCircle", label: "Telegram", value: "@wedding_2026", href: "https://t.me/wedding_2026" },
               { icon: "Mail", label: "Email", value: "wedding@email.ru", href: "mailto:wedding@email.ru" },
             ].map((item, i) => (
@@ -464,8 +464,8 @@ export default function Index() {
 
           <div className="border-t border-[#C9A84C]/10 pt-10">
             <div className="flex justify-center mb-4">{ornamentSvg}</div>
-            <p className="font-display text-2xl text-white/40 font-light italic">14 · 06 · 2026</p>
-            <p className="font-body text-xs text-white/20 mt-2 tracking-widest uppercase">Александр &amp; Екатерина</p>
+            <p className="font-display text-2xl text-white/40 font-light italic">11 · 07 · 2026</p>
+            <p className="font-body text-xs text-white/20 mt-2 tracking-widest uppercase">Любовь &amp; Владислав</p>
           </div>
         </div>
       </section>
