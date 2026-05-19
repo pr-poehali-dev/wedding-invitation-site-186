@@ -344,7 +344,7 @@ export default function Index() {
               <div className="flex-1">
                 <span className="font-body text-xs tracking-[0.3em] uppercase text-[#C9A84C]/70 mb-4 block">Наша история</span>
                 <p className="font-display text-2xl md:text-3xl text-white font-light leading-relaxed italic">
-                  "Три года назад мы встретились случайно — и с тех пор знаем, что случайностей не бывает."
+                  "Два года назад мы встретились случайно — и с тех пор знаем, что случайностей не бывает."
                 </p>
               </div>
               <div className="hidden md:block w-px bg-[#C9A84C]/20 self-stretch" />
