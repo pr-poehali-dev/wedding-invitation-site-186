@@ -75,9 +75,20 @@ function RSVPSection() {
   const toggleDrink = (d: string) =>
     setDrinks(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !attending) return;
+    setSending(true);
+    try {
+      await fetch("https://functions.poehali.dev/ba642b11-ff8e-4081-972f-69e874549bd9", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, attending: attending === "yes", guests, diet, drinks, transfer }),
+      });
+    } catch (err) { console.error(err); }
+    setSending(false);
     setSubmitted(true);
   };
 
@@ -253,10 +264,11 @@ function RSVPSection() {
 
             <button
               type="submit"
-              disabled={!name || !attending}
-              className="w-full py-4 rounded-lg font-body text-sm font-semibold tracking-widest uppercase transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed bg-[#C9A84C] text-[#0D0B08] hover:bg-[#E8C97A] active:scale-[0.98]"
+              disabled={!name || !attending || sending}
+              className="w-full py-4 rounded-lg font-body text-sm font-semibold tracking-widest uppercase transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed bg-[#C9A84C] text-[#0D0B08] hover:bg-[#E8C97A] active:scale-[0.98] flex items-center justify-center gap-2"
             >
-              Отправить ответ
+              {sending && <span className="w-4 h-4 border-2 border-[#0D0B08]/30 border-t-[#0D0B08] rounded-full animate-spin" />}
+              {sending ? "Отправляем..." : "Отправить ответ"}
             </button>
           </form>
         )}

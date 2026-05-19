@@ -1,0 +1,3 @@
+ALTER TABLE t_p24914580_wedding_invitation_s.rsvp
+  ADD COLUMN IF NOT EXISTS drinks TEXT[],
+  ADD COLUMN IF NOT EXISTS transfer BOOLEAN;

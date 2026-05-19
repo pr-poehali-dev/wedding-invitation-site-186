@@ -5,7 +5,7 @@
       "method": "GET",
       "path": "/",
       "expectedStatus": 200,
-      "expectedBody": {"rsvps": [], "total_yes": 0, "total_no": 0},
+      "expectedBody": {"total_guests": 0},
       "bodyMatcher": "partial"
     },
     {
