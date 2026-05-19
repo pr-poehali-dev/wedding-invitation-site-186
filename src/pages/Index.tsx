@@ -443,8 +443,6 @@ export default function Index() {
             {[
               { icon: "Phone", label: "Владислав", value: "+7 (996) 411-36-51", href: "tel:+79964113651" },
               { icon: "Phone", label: "Любовь", value: "+7 (995) 443-15-06", href: "tel:+79954431506" },
-              { icon: "MessageCircle", label: "Telegram", value: "@wedding_2026", href: "https://t.me/wedding_2026" },
-              { icon: "Mail", label: "Email", value: "wedding@email.ru", href: "mailto:wedding@email.ru" },
             ].map((item, i) => (
               <a
                 key={i}
